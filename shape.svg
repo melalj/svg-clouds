@@ -1,0 +1,22 @@
+<svg width="800" height="500">
+  <defs>
+    <filter id="Cloud">
+      <feTurbulence baseFrequency="0.03" numOctaves="13" opacity="0.1" seed="43" stitchTiles="stitch" type="fractalNoise" result="Turbulence" />
+       <feColorMatrix in="Turbulence" type="luminanceToAlpha" result="ColorMatrix" />
+      <feMerge result="background_cloud">
+        <feMergeNode in="ColorMatrix" />
+      </feMerge>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur_shape" />
+      <feComposite in="blur_shape" in2="background_cloud" operator="in" result="comp"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(20,20)">
+    <path d="M60.3739355,63.6555508 C60.3739355,63.6555508 34.2427462,49.589575 25.2917072,61.1511396 C16.3406682,72.7127042 0.439856402,94.7662189 0.439856402,107.878185 C0.439856402,120.990151 5.62756254,140.06603 14.2170964,140.933607 C22.8066303,141.801183 40.6621672,126.988638 45.3920391,133.12974 C50.1219111,139.270842 63.2464938,151.698903 77.8214261,153.722528 C92.3963585,155.746153 98.3925807,145.593455 108.128324,141.17346 C117.864067,136.753466 122.413186,118.159453 136.202332,118.351768 C149.991478,118.544082 153.106483,92.0619297 163.504624,92.0619297 C173.902766,92.0619297 242.128732,47.7679882 210.869367,38.5314855 C179.61,29.2949826 112.846289,-24.3683532 94.893341,14.1691154 C76.9403927,52.7065841 111.601587,70.9040826 70.3055837,68.1220036 C29.0095813,65.3399245 60.3739355,63.6555508 60.3739355,63.6555508 L60.3739355,63.6555508 Z" fill="#000000" filter="url(#Cloud)"></path>
+
+    <g class="outage_text" transform="translate(100, 90)scale(1)">
+      <text dy="10px" fill="white" style="font-family: Arial, SAns-serif;text-anchor: middle;text-shadow: #000 0px 1px 1px;font-size:18px;">Line2</text>
+      <text dy="-9px" fill="white" style="font-family: Arial, SAns-serif;text-anchor: middle;text-shadow: #000 0px 1px 1px;font-size:26px;">Line1</text>
+    </g>
+  </g>
+</svg>
