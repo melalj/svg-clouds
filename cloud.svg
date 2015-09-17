@@ -1,0 +1,22 @@
+<svg width="800" height="500">
+  <defs>
+    <filter id="Cloud">
+      <feTurbulence baseFrequency="0.03" numOctaves="13" opacity="0.1" seed="43" stitchTiles="stitch" type="fractalNoise" result="Turbulence" />
+       <feColorMatrix in="Turbulence" type="luminanceToAlpha" result="ColorMatrix" />
+      <feMerge result="background_cloud">
+        <feMergeNode in="ColorMatrix" />
+      </feMerge>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur_shape" />
+      <feComposite in="blur_shape" in2="background_cloud" operator="in" result="comp"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(20,20)">
+    <circle r="90" cy="90" cx="90" fill="#000000" filter="url(#Cloud)"></circle>
+
+    <g class="outage_text" transform="translate(90, 90)scale(1)">
+      <text class="outage-severity" dy="10px" fill="white" style="font-family: Arial, SAns-serif;text-anchor: middle;text-shadow: #000 0px 1px 1px;font-size:18px;">Line2</text>
+      <text class="outage-host" dy="-9px" fill="white" style="font-family: Arial, SAns-serif;text-anchor: middle;text-shadow: #000 0px 1px 1px;font-size:26px;">Line1</text>
+    </g>
+  </g>
+</svg>
